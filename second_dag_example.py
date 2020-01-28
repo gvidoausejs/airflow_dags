@@ -6,10 +6,9 @@ from airflow.operators.latest_only_operator import LatestOnlyOperator
 from airflow.utils.dates import days_ago
 
 dag = DAG(
-    dag_id='latest_only',
+    dag_id='second_dag_example',
     schedule_interval=dt.timedelta(hours=4),
-    start_date=days_ago(2),
-    tags=['example']
+    start_date=days_ago(2)
 )
 
 latest_only = LatestOnlyOperator(task_id='latest_only', dag=dag)
